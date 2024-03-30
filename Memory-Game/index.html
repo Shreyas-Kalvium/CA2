@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Memory Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0; 
+            text-align: justify; 
+            background-color: black;
+        }
+        .content {
+            max-width: 800px;
+            padding: 20px; 
+            text-align: center;
+        }
+        h1 {
+            color:white;
+            text-align: center;
+        }
+        p {
+            color: white;
+            font-size: 25px;
+            line-height: 1.5;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        ul{
+            color: white;
+            font-size: 25px;
+        }
+        input[type="text"] {
+            padding: 8px 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        label{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Memory Game Rules</h1>
+        <p>The Memory Game, also known as Concentration, is a card game where players need to find matching pairs of cards. The rules are as follows:</p>
+        <ul>
+            <li>Use a deck of cards with matching pairs (e.g., 8 pairs for a total of 16 cards).</li>
+            <li>Shuffle the cards and lay them face down in a grid formation.</li>
+            <li>Players take turns flipping over two cards.</li>
+            <li>If the cards match, the player keeps the pair and gets another turn.</li>
+            <li>If the cards do not match, they are turned face down again, and it's the next player's turn.</li>
+            <li>The game continues until all pairs have been matched.</li>
+            <li>The player with the most pairs at the end wins.</li>
+        </ul>
+        <form id="startForm">
+            <label for="username">Enter your username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <button type="submit">Start Game</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("startForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            var username = document.getElementById("username").value;
+            window.location.href = "game.html?username=" + username; // Redirect to game.html with username
+        });
+    </script>
+</body>
+</html>
